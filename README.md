@@ -56,5 +56,41 @@ Appointment Bot is an interactive bot application that uses AWS services for spe
 - The conversation will continue with real-time audio recording and transcription.
 - To end the conversation, click "End Conversation".
 
+## File Details
+
+### `main.py`
+- Entry point of the application.
+- Initializes the GUI and starts the conversation process.
+
+### `audio_utils.py`
+- Contains functions for audio recording and transcription using AWS Transcribe.
+  - `record_audio(output_filename, silence_threshold, chunk_size, rate, silence_duration)`: Records audio and detects silence to stop recording.
+  - `real_time_transcribe(audio_filename)`: Performs real-time transcription on recorded audio.
+
+### `aws_utils.py`
+- Contains functions for interacting with AWS Bedrock and Polly.
+  - `invoke_model_with_stream(conversation_history)`: Invokes the Bedrock model with the conversation history and streams the response.
+  - `synthesize_speech(text)`: Uses AWS Polly to convert text to speech and play the audio.
+
+### `gui.py`
+- Sets up the graphical user interface using Tkinter.
+  - `start_conversation(user_input, canvas, circle)`: Starts the conversation by handling user input, bot response, and text-to-speech.
+  - `end_conversation()`: Ends the conversation and exits the application.
+
+## Important Notes
+- Ensure that you have the necessary AWS credentials configured. You can set them up using the AWS CLI or environment variables.
+- Make sure to handle the sensitive information securely and never commit your `.env` file to version control.
+- If you need to modify any AWS-related configurations, update the `aws_utils.py` file accordingly.
+
+## Requirements
+List of dependencies:
+- aiofile
+- amazon-transcribe
+- boto3
+- nest-asyncio
+- playsound
+- pyaudio
+- tk
+
 ## License
 This project is licensed under the MIT License.
