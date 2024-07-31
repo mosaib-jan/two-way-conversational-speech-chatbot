@@ -1,0 +1,7 @@
+aiofile
+amazon-transcribe
+boto3
+nest-asyncio
+playsound
+pyaudio
+tk
