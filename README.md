@@ -1,4 +1,4 @@
-# Appointment Bot
+# Two Way speech based conversational chatbot
 
 ## Overview
 Appointment Bot is an interactive bot application that uses AWS services for speech-to-text, text-to-speech, and conversational AI. The application includes a GUI built with Tkinter and provides real-time transcription and responses.
